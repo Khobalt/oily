@@ -5,6 +5,7 @@
     1. cargo new
     1. cargo build
     1. cargo run
+    1. Rust complains if you assign a variable and then immediately overwrite it. In my situation, just declaring a variable was better.
 1. Things I did:
     1. Went to the Rust website and installed via a shell script known as 'rustup'
     1. Installed all the vs code extensions that looked handy, including the language server
