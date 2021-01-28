@@ -21,7 +21,7 @@
 
 ## Ownership
 
-Since there's no garbage collector, and dereferencing seems a bit less explicit, Rust has another paradigm altogether. The materials that I'm reading more or less claim that "Ownership" is the center-piece of Rust. Once variables go out of scope theres an implicit <em>drop</em> called on them. There's no such thing as a shallow copy on variables that are on the heap. So if you do what looks like one in Java or C++ you're actually doing a move, ie. the old variable is no longer valid.
+Since there's no garbage collector, and dereferencing seems a bit less explicit, Rust has another paradigm altogether. The materials that I'm reading more or less claim that "Ownership" is the center-piece of Rust. Once variables go out of scope theres an implicit `drop` called on them. There's no such thing as a shallow copy on variables that are on the heap. So if you do what looks like one in Java or C++ you're actually doing a move, ie. the old variable is no longer valid.
 
 Transfering ownership also extends into functions, where again there are implicit drops at the end. I'm not quite sure what shenanigans are going to propagate from this design.
 
@@ -43,3 +43,5 @@ fn calculate_length(s: &String) -> usize {
 ```
 
 Referencing and dereferencing seem similar to C/C++, ie & and *
+
+To navigate the whole "ownership" construct, passing work regarding collections such as strings into functions relies on slices. A string slice looks like `&str`.
